@@ -1,10 +1,9 @@
 import React from 'react';
+import TaskList from '../Shared/Taskslist/TaskList';
 
 const Todolist = () => {
     return (
-        <div>
-            <h2>Your list</h2>
-        </div>
+        <TaskList></TaskList>
     );
 };
 

@@ -16,7 +16,6 @@ export const addNewTodo = (data) => async (dispatch) => {
 export const getAllTodos = (email) => async (dispatch) => {
     try {
         const res = await axios.get(`${api_url}/todosmail?email=${email}`)
-        console.log(`${api_url}/todosmail?email=${email}`)
         dispatch({ type: GETALL_TODO, payload: res.data })
     }
     catch (error) {
