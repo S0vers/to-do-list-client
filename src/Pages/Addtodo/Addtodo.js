@@ -16,7 +16,8 @@ const Addtodo = () => {
         const info = {
             email,
             title,
-            createdAt: Date.now()
+            createdAt: Date.now(),
+            iscomplete: false
         }
         dispatch(addNewTodo(info))
         form.reset()
