@@ -83,6 +83,13 @@ const Task = ({ todo }) => {
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                     {todo?.details}
                 </p>
+                {
+                    todo?.image ? < img className='w-64 h-64'
+                        src={todo.image}
+                        alt="..."
+                    /> :
+                        <></>
+                }
                 <Button onClick={openModal} className='flex justify-start w-32'>
                     Edit or Add
                 </Button>

@@ -5,6 +5,7 @@ import CompletedToDo from "../../Pages/CompletedToDo/CompletedToDo";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Pages/Signup/Signup";
 import Todolist from "../../Pages/Todolist/Todolist";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -14,15 +15,15 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Addtodo></Addtodo>
+                element: <PrivateRoute> <Addtodo></Addtodo></PrivateRoute>
             },
             {
                 path: '/todolist',
-                element: <Todolist></Todolist>
+                element: <PrivateRoute><Todolist></Todolist></PrivateRoute>
             },
             {
                 path: '/completed',
-                element: <CompletedToDo></CompletedToDo>
+                element: <PrivateRoute><CompletedToDo></CompletedToDo></PrivateRoute>
             },
             {
                 path: '/login',

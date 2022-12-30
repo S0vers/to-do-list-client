@@ -1,6 +1,6 @@
 import { ADDNEW_TODO, GETALL_TODO, TOGGLE_Complete, TOGGLE_Delete, GETALL_COMPLETED, UPDATETODO } from "./type";
 import axios from "axios";
-const api_url = 'http://localhost:5000'
+const api_url = 'https://todo-list-server-azure.vercel.app'
 
 
 export const addNewTodo = (data) => async (dispatch) => {

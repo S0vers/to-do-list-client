@@ -19,7 +19,6 @@ const CompletedToDo = () => {
     }, [email, loading, user?.email])
     return (
         <div>
-            <p>there are total  tasks left</p>
             {
                 todos?.map(todo => <CompleteTask key={todo._id} todo={todo}></CompleteTask>)
             }
