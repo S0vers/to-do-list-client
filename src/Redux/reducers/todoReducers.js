@@ -9,10 +9,22 @@ export const todoReducers = (state = [], action) => {
             return action.payload
         case actionTypes.GETALL_COMPLETED:
             return action.payload
-        // case actionTypes.TOGGLE_Complete:
-        //     return state.map(todo => (
-        //         todo._id === action.payload._id ? { ...todo, todo.iscomplete: !todo.iscomplete} : todo
-        //     ))
+        case actionTypes.TOGGLE_Complete:
+            return state.map(todo => {
+                if (todo._id === action.payload._id) {
+                    todo = action.payload
+                }
+                return todo
+            })
+        case actionTypes.UPDATETODO:
+            return state.map(todo => {
+                if (todo._id === action.payload._id) {
+                    todo = action.payload
+                }
+                return todo
+            })
+        case actionTypes.TOGGLE_Delete:
+            return action.payload
         default:
             return state;
     }

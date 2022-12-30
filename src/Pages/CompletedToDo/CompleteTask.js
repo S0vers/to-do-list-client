@@ -1,8 +1,10 @@
 import { Badge, Card } from 'flowbite-react';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { deleteToDo } from '../../Redux/actions/index'
 const CompleteTask = ({ todo }) => {
+    const dispatch = useDispatch();
     return (
         <div>
             <Card>
@@ -13,7 +15,7 @@ const CompleteTask = ({ todo }) => {
                     <Badge color="warning">
                         <Link to='/todolist'>Unfinised Tasks</Link>
                     </Badge>
-                    <Badge color="failure">
+                    <Badge color="failure" onClick={() => dispatch(deleteToDo(todo._id))}>
                         Delete
                     </Badge>
                 </div>

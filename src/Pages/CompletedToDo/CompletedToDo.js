@@ -9,7 +9,6 @@ const CompletedToDo = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('')
     const todos = useSelector(state => state.todos);
-    console.log(todos)
     useEffect(() => {
         if (user?.email) {
             setEmail(user.email)
@@ -22,7 +21,7 @@ const CompletedToDo = () => {
         <div>
             <p>there are total  tasks left</p>
             {
-                todos.map(todo => <CompleteTask key={todo._id} todo={todo}></CompleteTask>)
+                todos?.map(todo => <CompleteTask key={todo._id} todo={todo}></CompleteTask>)
             }
         </div>
     );
